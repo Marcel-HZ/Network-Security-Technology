@@ -10,6 +10,9 @@
 #include <stdio.h>
 #include "des_constants.h"
 #include "des.h"
+#include "des.h"
+#include "des.h"
+
 
 using namespace std;
 
@@ -87,8 +90,6 @@ int client() {
             perror("client recv err");
             break;
         }
-        sMsg[sLen] = '\0';
-
         string decryResult = "";
         if (des.Decry(sMsg, DES_KEY, decryResult) != 0) { //解密
             perror("decry err");
