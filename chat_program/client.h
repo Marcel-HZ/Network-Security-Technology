@@ -13,6 +13,8 @@
 #include <stdio.h>
 #include "des_constants.h"
 #include "des.h"
+#define PORT 9977
+#define PORT 9977
 
 #define PORT 9977
 #define MAX_LINE 20

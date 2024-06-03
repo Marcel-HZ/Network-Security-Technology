@@ -1,1 +1,2 @@
 g++ -o chat main.cpp server.cpp client.cpp DES/Decry.cpp DES/des_constants.cpp DES/des.cpp DES/Encry.cpp DES/HandleData.cpp DES/MakeData.cpp DES/MakeKey.cpp -I./DES
+g++ -o chat main.cpp server.cpp client.cpp DES/Decry.cpp DES/des_constants.cpp DES/des.cpp DES/Encry.cpp DES/HandleData.cpp DES/MakeData.cpp DES/MakeKey.cpp -I./DES

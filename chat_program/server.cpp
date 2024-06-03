@@ -5,10 +5,6 @@
 #include <arpa/inet.h>
 #include <string.h>
 #include <string>
-#include <unistd.h>
-#include <errno.h>
-#include <stdio.h>
-#include "des_constants.h"
 #include "des.h"
 
 using namespace std;
