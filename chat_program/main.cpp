@@ -5,7 +5,6 @@
 using namespace std;
 
 int main() {
-    cout << "————————【chat start】————————" << endl;
     while(1) {
         cout << "Client or Server?" << endl;
         char cs;
@@ -24,6 +23,5 @@ int main() {
             cout << "err input" << endl;
         }
     }
-    cout << "————————【chat end】————————" << endl;
     return 0;
 }
