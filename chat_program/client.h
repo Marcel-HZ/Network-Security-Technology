@@ -16,7 +16,11 @@
 
 #define PORT 9977
 #define MAX_LINE 20
-#define MSG_SIZE 4096
+#define MAX_LINE 20
+#define MAX_LINE 20
+
+#define MSG_SIZE 40#define MAX_LINE 20
+96
 #define DEFAULT_SERVER "127.0.0.1"
 
 int client();
