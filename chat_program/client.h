@@ -11,8 +11,11 @@
 #include <unistd.h>
 #include <errno.h>
 #include <stdio.h>
-#include "des_constants.h"
-#include "des.h"
+#include "DES/des_constants.h"
+#include "MakeData.h"
+#include "RSA/rsa_constants.h"
+#include "DES/des.h"
+#include "RSA/rsa.h"
 
 #define PORT 9977
 #define MAX_LINE 20

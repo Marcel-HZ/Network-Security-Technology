@@ -3,7 +3,7 @@
 #include <vector>
 #include "des.h"
 #include "des_constants.h"
-#include "MakeData.h"
+#include "../MakeData.h"
 using namespace std;
 
 // 生成16个密钥中的每一个子密钥

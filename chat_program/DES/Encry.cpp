@@ -4,7 +4,7 @@
 #include <string>
 #include "des.h"
 #include "des_constants.h"
-#include "MakeData.h"
+#include "../MakeData.h"
 using namespace std;
 
 int CDesOperate::Encry(string plainText, string key, string& encryResult) {

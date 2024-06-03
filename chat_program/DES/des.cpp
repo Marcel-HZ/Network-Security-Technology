@@ -1,24 +1,32 @@
 #include <iostream>
 #include <vector>
 #include <map>
+#include <stdlib.h>
 #include <string>
 #include "des.h"
 #include "des_constants.h"
-#include "MakeData.h"
+#include "../MakeData.h"
 using namespace std;
+
+// 生成随机DES秘钥，8个字母的string
+string CDesOperate::GenerateDesKey() {
+    string desKey = "";
+    srand((unsigned)time(NULL));
+    for (int i = 0; i < 8; ++i) {
+        char temp = 65 + rand() % 26;
+        desKey += temp;
+    }
+    return desKey;
+}
 
 // 初始置换IP，逆初始置换IP
 vector<bool> CDesOperate::InitReplacementIP(vector<bool> input, int type) {
-    const int* pc_table;
+    const int* pc_table = pc_first;
     if (type == INIT_REPLACE_IP) {
         pc_table = pc_first;
     }
     else if (type == INVERSE_REPLACE_IP) {
         pc_table = pc_last;
-    }
-    else {
-        // 处理未知类型的情况，例如抛出异常或者返回空向量
-        return vector<bool>();
     }
 
     vector<bool> result;
@@ -28,7 +36,6 @@ vector<bool> CDesOperate::InitReplacementIP(vector<bool> input, int type) {
 
     return result;
 }
-
 
 // 明文数据处理
 vector<vector<bool> > CDesOperate:: EncryDataProcess(string text) {

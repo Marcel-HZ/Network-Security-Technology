@@ -2,7 +2,7 @@
 #include <vector>
 #include "des.h"
 #include "des_constants.h"
-#include "MakeData.h"
+#include "../MakeData.h"
 using namespace std;
 
 // f函数 = 选择扩展运算E + 密钥加运算 + 选择压缩运算S + 置换P

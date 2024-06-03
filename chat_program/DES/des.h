@@ -4,30 +4,31 @@
 #include <vector>
 #include <string>
 #include "des_constants.h"
-#include "MakeData.h"
+#include "../MakeData.h"
 
 class CDesOperate {
 public:
-    int Encry(std::string plainText, std::string key, std::string& encryResult);  // 加密函数
-    int Decry(std::string cipherText, std::string key, std::string& decryResult); // 解密函数
+    int Encry(string plainText, string key, string& encryResult);  // 加密函数
+    int Decry(string cipherText, string key, string& decryResult); // 解密函数
+    static string GenerateDesKey(); // 生成随机DES密钥
 
 private:
-    std::vector<bool> EncryPro(std::vector<bool> input, std::vector<std::vector<bool> > subKey); // 处理64bit的加密函数
-    std::vector<bool> DecryPro(std::vector<bool> input, std::vector<std::vector<bool> > subKey); // 处理64bit的解密函数
+    vector<bool> EncryPro(vector<bool> input, vector<vector<bool> > subKey); // 处理64bit的加密函数
+    vector<bool> DecryPro(vector<bool> input, vector<vector<bool> > subKey); // 处理64bit的解密函数
 
-    std::vector< std::vector<bool> > EncryDataProcess(std::string text); // 明文数据处理：string → bool
-    std::vector< std::vector<bool> > DecryDataProcess(std::string text); // 密文数据处理：string → bool
-    std::vector<bool> KeyProcess(std::string key); // key处理：string → bool
+    vector< vector<bool> > EncryDataProcess(string text); // 明文数据处理：string → bool
+    vector< vector<bool> > DecryDataProcess(string text); // 密文数据处理：string → bool
+    vector<bool> KeyProcess(string key); // key处理：string → bool
 
-    std::vector<bool> InitReplacementIP(std::vector<bool> input, int type); // 初始/逆初始置换IP
+    vector<bool> InitReplacementIP(vector<bool> input, int type); // 初始/逆初始置换IP
 
-    std::vector<bool> fFunc(std::vector<bool> input, std::vector<bool> key); // f函数
-    std::vector<bool> EBox(std::vector<bool> input); // f1: 选择扩展运算E
-    std::vector<bool> keyAddition(std::vector<bool> input, std::vector<bool> key); // f2: 密钥加运算
-    std::vector<bool> selectCompressionOperation(std::vector<bool> input); // f3: 选择压缩运算S
-    std::vector<bool> replacementOp(std::vector<bool> input); // f4: 置换运算P
+    vector<bool> fFunc(vector<bool> input, vector<bool> key); // f函数
+    vector<bool> EBox(vector<bool> input); // f1: 选择扩展运算E
+    vector<bool> keyAddition(vector<bool> input, vector<bool> key); // f2: 密钥加运算
+    vector<bool> selectCompressionOperation(vector<bool> input); // f3: 选择压缩运算S
+    vector<bool> replacementOp(vector<bool> input); // f4: 置换运算P
 
-    std::vector< std::vector<bool> > MakeKey(std::vector<bool> initKey); // 生成16个密钥中的每一个子密钥，得到subKey
+    vector< vector<bool> > MakeKey(vector<bool> initKey); // 生成16个密钥中的每一个子密钥，得到subKey
 };
 
 #endif // DES_OPERATE_H

@@ -4,7 +4,7 @@
 #include <string>
 #include "des.h"
 #include "des_constants.h"
-#include "MakeData.h"
+#include "../MakeData.h"
 using namespace std;
 
 int CDesOperate::Decry(string cipherText, string key, string& decryResult) {
